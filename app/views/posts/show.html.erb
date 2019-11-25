@@ -1,0 +1,12 @@
+<div class='post-show'>
+
+  
+
+  <div class="post-show__image" style="background-image: url(<%= @post.image %>);">  
+  
+  <h3><%= @post.text %></h3>
+  <%= link_to "削除", "/posts/#{@post.id}", method: :delete %>
+  <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
+
+  </div>
+</div>

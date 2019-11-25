@@ -1,1 +1,7 @@
-記事
+<div class="posts ">
+  <%= link_to "/posts/#{post.id}" do%>
+    <%= image_tag post.image, class: "post-image" %>
+      <%# <div class="post-text"><%= @posts.text %></div> %>
+  
+  <% end %>
+</div>

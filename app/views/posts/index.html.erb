@@ -1,37 +1,70 @@
 <div class = "top">
-  <%= image_tag '1119.png', alt: "top-image", class: "top-image"%>
-  <h1>Plants Life</h1>
+  <div class="top-image">
+    <div class="title">
+      Plants Life
+    </div>
+  </div>
 </div>
 
 
-<div class="pick-up">
-  <h2>PICK UP</h2>
+<div class="contens">
+
+  <div class="pick-up">
+    <div class="pick-up__title">
+      PICK UP
+    </div>
+  </div>
+
+  <div class='slider-image'>
+    <div class='slider'>
+      <% @posts.each do |post| %>
+        <div class="pick-up-post">
+          <%= link_to "/posts/#{post.id}" do%>
+            <%= image_tag post.image, class: "pick-up-post__image" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br><br><br><br>
+
+  <div class="catch-copy">
+    <div class="catch-copy__text">
+      暮らしにグリーンを。<br><br>
+      日々の生活の中で少しだけ、緑を取り入れませんか？<br><br>
+      緑は、調和をもたらし安心や安定を心にもたらす色とされています。<br>
+      インテリアとして、また時には癒やしてくれるペットのような存在として,<br>
+      生活に彩りを与えてくれる植物たちをご紹介します。
+    </div>
+  </div>
+
+
+
+  <div class="btn">
+    <%= link_to '投稿する', new_post_path, class: "new-btn"%>
+    <%= link_to '  探 す  ', new_post_path, class: "search-btn"%>　
+  </div>
+
 </div>
 
 
-<% @posts.each do |post| %>
-  <%= render partial: "post", locals: { post: post } %>
+
+
+
+
+  <%# ハンバーガーメニューにする %>
+<% if current_user %>
+  <div class="logout">
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn' %>
+    <%= link_to 'マイページ', user_path(current_user.id), class: 'mypage-btn' %>
+  </div>
+<% else %>
+  <div class="login">
+    <%= link_to 'ユーザー新規登録', new_user_registration_path, class: 'user-new-btn' %>
+    <%= link_to 'ログイン', new_user_session_path, class: 'login-btn' %>
+  </div>
 <% end %>
 
 
-
-
-
-
-
-
-<div class="menu">
-  <%= link_to '投稿する', new_post_path, class: "new-post-btn"%>
-
-  <% if current_user %>
-    <div class="logout">
-      <%= link_to 'ユーザー新規登録', new_user_registration_path, class: 'user-new-btn' %>
-      <%= link_to 'ログイン', new_user_session_path, class: 'login-btn' %>
-    </div>
-  <% else %>
-    <div class="login">
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn' %>
-      <%= link_to 'マイページ', user_path(current_user.id), class: 'mypage-btn' %>
-    </div>
-  <% end %>
-</div>
+ <br><br><br><br>
