@@ -1,7 +1,27 @@
 <div class="posts ">
   <%= link_to "/posts/#{post.id}" do%>
     <%= image_tag post.image, class: "post-image" %>
-      <%# <div class="post-text"><%= @posts.text %></div> %>
-  
+    <%# <div class="post-text"><%= @post.text %>
+    <%= simple_format(post.text) %>
   <% end %>
+</div>
+
+
+<div class="cp_card05" style="background-image: url(<%= post.image %>);">
+  <div class="details">
+    <div class="date">
+      <span class="day"><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></span>
+    </div>
+    <ul class="meta">
+      <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+      <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+    </ul>
+  </div>
+  <div class="description">
+    <div class="content">
+      <span class="author"><%= post.user.name %></span>
+      <p class="text"><%= simple_format(post.text) %></p>
+      <a href="#" class="button">Read more</a>
+    </div>
+  </div>
 </div>
