@@ -1,18 +1,44 @@
+.mypage-top{
+  vertical-align:  middle;   //中央寄せ
+  padding: 100px;
+  text-align:  center;
+}
+
+.mypage-top__image{
+  display: inline-block;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+ }
+ 
+ .mypage-top__name{
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-size: large;
+}
+
+
+
 .mypage-post{
   margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
   width: 700px;
-  background-color: antiquewhite;
+  background-color: #eee7e0;
 }
 
 
 .cp_card05 {
   margin: 0 auto;
+  margin-bottom: 100px;
   position: relative;
   overflow: hidden;
   min-height: 330px;
   border-radius: 3px;
   width: 500px;
-  background: url(images.jpg) center/cover no-repeat;
+  background: url(#) center/cover no-repeat;
   background-color: #ffffff;
   -webkit-box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
