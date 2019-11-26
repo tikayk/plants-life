@@ -2,6 +2,8 @@
 body{
   font-family: "Noto Sans CJK JP","Noto Sans JP",sans-serif;
   background-image: url("p0026_l.png");
+  // opacity: 0.5;
+  background-color: rgba( 255, 255, 255, 0.55 );
 }
 
 .top-image{
@@ -72,6 +74,7 @@ h3{
 }
 
 .catch-copy__text{
+  background-color: white;
   width: 65%;
   margin: 0 auto;
   padding-left: 25%;
