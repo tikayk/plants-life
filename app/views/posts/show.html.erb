@@ -1,12 +1,30 @@
+
+
+
+
 <div class='post-show'>
-
-  
-
   <div class="post-show__image" style="background-image: url(<%= @post.image %>);">  
-  
-  <h3><%= @post.text %></h3>
-  <%= link_to "削除", "/posts/#{@post.id}", method: :delete %>
-  <%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %>
-
+    <div class="details">
+      <div class="date">
+        <span class="day"><%= @post.created_at.strftime("%Y/%m/%d") %></span>
+      </div>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <ul class="meta">
+          <li><%= link_to "削除", "/posts/#{@post.id}", method: :delete %></li>
+          <li><%= link_to '編集', "/posts/#{@post.id}/edit", method: :get %></li>
+          <%# <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+          <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li> %>
+        </ul>
+      <% end %>
+    </div>
+    <div class="description">
+      <div class="content">
+        <span class="author"><%= @post.user.name %></span>
+        <div class="text"><%= @post.text %></div>
+        <a href="#" class="button">Read more</a>
+      </div>
+    </div>
   </div>
 </div>
+
+

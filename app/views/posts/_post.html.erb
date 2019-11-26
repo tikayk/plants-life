@@ -4,8 +4,28 @@
       <span class="day"><%= post.created_at.strftime("%Y/%m/%d") %></span>
     </div>
     <ul class="meta">
-      <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-      <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+      <li>
+        <% if like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+            <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+            <span class="fa fa-heart like-btn"></span>
+          <% end %>
+        <% end %>
+       </li>
+
+       
+        <%# <a href="#" class="fas fa-commen"><span>3</span></a> %>
+        <%= link_to root_path, method: :get do %>
+          <i class="fas fa-heart">・</i> 
+        <% end %>
+      </li>
+      <li>
+        <%# <a href="#" class="fas fa-commen"><span>3</span></a> %>
+        <i class="far fa-comment"></i>
+      </li>
     </ul>
   </div>
   <div class="description">
@@ -16,3 +36,16 @@
     </div>
   </div>
 </div>
+
+
+<i class="fas fa-heart"></i>
+<i class="far fa-heart"></i>
+
+<i class="far fa-comment"></i>
+
+
+<% if like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <--! いいね済み-->
+      <% else %>
+        <%= link_to("/likes/#{@post.id}/create", {method: "post"}) %>
+      <% end %>
