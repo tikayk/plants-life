@@ -3,35 +3,16 @@
     <div class="date">
       <span class="day"><%= post.created_at.strftime("%Y/%m/%d") %></span>
     </div>
-
-    <ul class="meta">
-      <li>
-
-        <% @like = Like.find_by(user_id: current_user.id, post_id: post.id)  %>
-        <% if @like == nil %>
-          <%= link_to("/posts/#{post.id}/likes", method: "post") do %>
-            <span class="fas fa-heart like-btn"></span>
-          <% end %>
-        <% else %>
-          <%= link_to("/posts/#{post.id}/likes/#{@like.id}", method: "delete") do %>
-            <span class="fas fa-heart like-btn-unlike"></span>          
-          <% end %>
-        <% end %>
-       </li>
-
-
-       <li>
-        <%# comment機能 %>
-       </li>
-    </ul>
-
-
   </div>
+
+  
   <div class="description">
     <div class="content">
       <span class="author"><%= post.user.name %></span>
       <div class="text"><%= simple_format(post.text) %></div>
-      <a href="#" class="button">Read more</a>
+      <%= link_to "/posts/#{post.id}" do %>
+        <span class=" button">Read more</span>
+      <% end %>
     </div>
   </div>
 </div>

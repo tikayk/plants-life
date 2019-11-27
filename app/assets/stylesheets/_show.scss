@@ -1,0 +1,47 @@
+.post-show{
+  text-align: center;
+  .post-show__image{
+    height: 500px;
+  }
+  .post-show__contents{
+    width: 700px;
+    margin: 0 auto;
+    padding: 100px 0;
+    .post-top{
+      .date{
+        text-align: left;
+        .day{
+          color: gray;
+          font-size: 12px;
+        }
+      }
+      .post-setting{
+        text-align: right;
+        padding: 0 10px;
+        ul li{
+          display: inline;
+          padding: 0 10px;
+          color: darkslategrey;
+        }
+        ul li:visited {
+          color: darkslategray;
+        }
+      }
+    }
+    .author{
+      font-size: 13px;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+    .description{
+      line-height: 2.0;
+      .content{
+        text-align: left;
+        .text{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
