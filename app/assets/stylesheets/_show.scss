@@ -8,26 +8,26 @@
     margin: 0 auto;
     padding: 100px 0;
     .post-top{
-      .date{
-        text-align: left;
-        .day{
-          color: gray;
-          font-size: 12px;
-        }
-      }
       .post-setting{
         text-align: right;
         padding: 0 10px;
         ul li{
           display: inline;
-          padding: 0 10px;
           color: darkslategrey;
         }
         ul li:visited {
           color: darkslategray;
         }
       }
+    .date{
+      text-align: left;
+      .day{
+        color: gray;
+        font-size: 12px;
+      }
     }
+  }
+
     .author{
       font-size: 13px;
       text-align: left;
@@ -38,7 +38,7 @@
       .content{
         text-align: left;
         .text{
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }

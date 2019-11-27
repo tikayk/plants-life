@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   has_many :likes
 
   mount_uploader :image, ImageUploader
+
 end

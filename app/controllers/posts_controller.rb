@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @like = Like.new
   end
   
   def edit
@@ -29,6 +30,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
   end
+
+  # def like(user)
+  #   likes.create(user_id: user.id)
+  # end
+
+  # def unlike(user)
+  #   likes.find_by(user_id: user.id).destroy
+  # end
   
   
   private
