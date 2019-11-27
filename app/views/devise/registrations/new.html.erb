@@ -3,32 +3,36 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-    name
-    <%= f.text_field :name, autofocus: true, maxlength: "8" %>
+  <div class="cp_iptxt">
+    <%= f.text_field :name, placeholder: "お名前", autofocus: true, maxlength: "8" %>
+    <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
   </div>
 
-  <div class="field">
-    <%= f.label :image, class: "image"%>
-    <%= f.file_field :image %>
+  <div class="cp_iptxt">
+    <%# <%= f.label :image, class: "image"%>
+      <%= f.file_field :image %>
+      <i class="fas fa-camera fa-lg fa-fw" aria-hidden="true"></i>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="cp_iptxt">
+    <%# <%= f.label :email , class: "email"%>
+      <%= f.email_field :email, placeholder: "E-Mai", autofocus: true, autocomplete: "email" %>
+      <i class="fas fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="cp_iptxt">
+    <%# <%= f.label :password %>
+      <% if @minimum_password_length %>
+       <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+        <%= f.password_field :password, placeholder: "パスワード", autocomplete: "new-password" %>
+        <i class="fas fa-lock fa-lg fa-fw" aria-hidden="true"></i>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="cp_iptxt">
+    <%# <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "パスワード", autocomplete: "new-password" %>
+      <i class="fas fa-lock fa-lg fa-fw" aria-hidden="true"></i>
   </div>
 
   <div class="actions">

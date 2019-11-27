@@ -1,12 +1,7 @@
 <div class="post-form">
- <h1>新規投稿ページ</h1>
 
 
   <%= form_for @post do |f| %>
-    <h3>
-      投稿する
-    </h3>
-
     <%# カテゴリーの選択form %>
     <%= f.file_field :image %>
     <%= f.text_area :text, placeholder: "text" , rows: "10" %>

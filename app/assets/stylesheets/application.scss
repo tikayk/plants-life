@@ -1,8 +1,9 @@
 // @import "moduls/use;
 @import "reset";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
 @import "index";
 @import "slick-theme"; 
 @import "slick";
 @import "post";
-@import "./font-awesome";
-
+@import "input.scss";
