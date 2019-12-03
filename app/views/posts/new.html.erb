@@ -1,11 +1,37 @@
-<div class="post-form">
+<div class="form">
 
+  <div class="form-text">
+    <p>新規投稿</p>
+  </div>
 
   <%= form_for @post do |f| %>
-    <%# カテゴリーの選択form %>
-    <%= f.file_field :image %>
-    <%= f.text_area :text, placeholder: "text" , rows: "10" %>
-    <%= f.submit "SEND" %>
+    <div class="input">
+      <%= f.text_area :text, rows: "13" %>
+    </div>
+    <div class="input-image">
+      <% f.label :image, class: "input-image__label" do %>
+        <i class="fas fa-camera fa-lg fa-fw" aria-hidden="true"></i>
+        <%= f.file_field :image, class: "file_field" %>
+      <% end %>
+    </div>
+
+    <div class="select-box">
+        <%= f.label :category_id, class: "label select-box" %>
+          <%= f.collection_select :category_id, Category.all, :id, :title, :include_blank => true %>
+    </div>
+    
+    <div class="input-btn">    
+      <%= f.submit "SEND" %>
+    </div>
+    
   <% end %>
 
 </div>
+
+
+
+
+
+
+
+

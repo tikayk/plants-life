@@ -19,8 +19,12 @@
           color: darkslategray;
         }
       }
+      .post-action{
+        padding: 5px 0;
+      }
     .date{
       text-align: left;
+      padding-bottom: 30px;
       .day{
         color: gray;
         font-size: 12px;
@@ -45,3 +49,19 @@
   }
 }
 
+.fas{
+  color: #393939;
+  &:visited {
+    color: #393939;
+  }
+}
+.far{
+  color: #393939;
+  &:visited {
+    color: #393939;
+  }
+}
+a {
+  text-decoration: none;
+  margin: 5px;
+}

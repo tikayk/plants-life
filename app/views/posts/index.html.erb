@@ -52,20 +52,4 @@
 
 
 
-
-
-  <%# ハンバーガーメニューにする %>
-<% if current_user %>
-  <div class="logout">
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-btn' %>
-    <%= link_to 'マイページ', user_path(current_user.id), class: 'mypage-btn' %>
-  </div>
-<% else %>
-  <div class="login">
-    <%= link_to 'ユーザー新規登録', new_user_registration_path, class: 'user-new-btn' %>
-    <%= link_to 'ログイン', new_user_session_path, class: 'login-btn' %>
-  </div>
-<% end %>
-
-
  <br><br><br><br><br><br><br><br><br><br><br><br>

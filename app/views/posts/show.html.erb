@@ -3,7 +3,6 @@
   <div class="post-show__contents">
     <div class="post-top">
       <div class="post-setting">
-        
         <% if user_signed_in? && current_user.id == @post.user_id %>
           <ul class="meta">
             <%= link_to "/posts/#{@post.id}", method: :delete do %>
@@ -15,25 +14,15 @@
           </ul>
         <% end %>
       </div>
-      
+
+      <div class="post-action">
+        <%= render partial: "likes/like", locals: { post: @post } %>
+      </div>
+
       <div class="date">
         <span class="day"><%= @post.created_at.strftime("%Y/%m/%d") %></span>
       </div>
       
-
-      <div class="post-action">
-        <%= @post.likes.count %>
-        <% if current_user.already_liked?(@post) %>
-          <%= link_to post_like_path(@post), method: :delete do %>
-            <span class="fas fa-heart like-btn-unlike"></span>  
-          <% end %>        
-        <% else %>
-          <%= link_to post_likes_path(@post) , method: :post do %>
-             <span class="fas fa-heart like-btn"></span>
-          <% end %>
-        <% end %>
-      </div>
-
     <div class="author">
       <span class="post-author"><%= @post.user.name %></span>
     </div>

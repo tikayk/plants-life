@@ -6,10 +6,11 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
-  
+
+  mount_uploader :image, ImageUploader
+
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
-
-  mount_uploader :image, ImageUploader
+  
 end

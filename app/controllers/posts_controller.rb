@@ -8,10 +8,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @category = Category.new
   end
-
+  
   def create
     Post.create(post_params)
+    # redirect_to root_path
+   
   end
 
   def show
@@ -30,15 +33,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
   end
-
-  # def like(user)
-  #   likes.create(user_id: user.id)
-  # end
-
-  # def unlike(user)
-  #   likes.find_by(user_id: user.id).destroy
-  # end
-  
   
   private
   

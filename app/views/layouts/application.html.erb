@@ -4,21 +4,48 @@
     <title>PlantsLife</title>
     <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <%= javascript_include_tag 'application'%>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <style>
-    body{
-      font-family: 'Sawarabi Gothic', sans-serif;
-    } 
-  </style>
+    
+    <style>
+      head, body{
+        font-family: 'Sawarabi Gothic', sans-serif;
+        color: #393939;
+        -webkit-font-smoothing: antialiased;
+      } 
+    </style>
+ 
+  <%# ナビバー %>
+  <% if current_user %>
+    <ul id="nav-bar">
+      <li class="nav-item"><%= link_to 'Home', root_path %></li>
+      <li class="nav-item"><%= link_to 'Category', categories_path %></li>
+      <li class="nav-item"><%= link_to 'My page', user_path(current_user.id) %></li>
+      <li class="nav-item"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+    </ul>
+
+  <% else %>
+    <ul id="nav-bar">
+      <li class="nav-item"><%= link_to 'Home', root_path %></li>
+      <li class="nav-item"><%= link_to 'Category', root_path %></li>
+      <li class="nav-item"><%= link_to 'Sign up', new_user_registration_path %></li>
+      <li class="nav-item"><%= link_to 'Log in', new_user_session_path %></li>
+    </ul>
+  <% end %>
+
   </head>
 
   <body>
       <%= yield %>
   </body>
+
 </html>
 

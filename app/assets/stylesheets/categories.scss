@@ -1,0 +1,117 @@
+.categories{
+  padding: 50px;
+  h4{
+    text-align: center;
+    margin: 50px;
+  }
+  .ex1 {
+    justify-content: space-around;
+    //レスポンシブ
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 0.8em;
+    margin: 0 0 2em;
+  }
+  .ex1 div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    height: 300px;
+    overflow: auto;
+    padding: 1em;
+  }
+}
+
+
+.pakila{
+  background-image: url(pakila.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.dracaena{
+  background-image: url(dracaena.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.bengalensis{
+  background-image: url(bengalensis.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.everfresh{
+  background-image: url(everfresh.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.monstera{
+  background-image: url(monstera.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.banyan{
+  background-image: url(banyan.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.umberata{
+  background-image: url(umberata.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.olive{
+  background-image: url(olive.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.artesima{
+  background-image: url(artesima.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.benjamin{
+  background-image: url(benjamin.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.sansevieria{
+  background-image: url(sansevieria.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.ivy{
+  background-image: url(ivy.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.augusta{
+  background-image: url(augusta.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.cactus{
+  background-image: url(cactus.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}
+.etc{
+  background-image: url(etc.jpg);
+  background-size: cover;
+  width: 413px;
+  height: 360px;
+}

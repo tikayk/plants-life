@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <%# ログインしていればlikeボタンが押せる %>
+
+  <% if current_user.already_liked?(@post) %>
+    <%= link_to post_like_path(@post), method: :delete, class: "unlike_btn" do %>
+      <span class="fas fa-heart like-icon-unlike"></span>  
+    <% end %>      
+      
+  <% else %>
+    <%= link_to post_likes_path(@post) , method: :post, class: "like_btn" do %>
+      <span class="far fa-heart like-icon"></span>
+    <% end %>
+  <% end %>
+
+<% else %>
+  
+  <i class="far fa-heart like-icon-unlike"></i> 
+<% end %>
+<%= @post.likes.count %>  
